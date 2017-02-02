@@ -3,3 +3,22 @@ html
     title= title
   body
     h1= message
+    form
+      input(
+        id="person-name"
+        type="text"
+        name="name"
+      )
+      input(
+        id="person-interests"
+        type="text"
+        name="interests"
+      )
+      button(
+        type="submit"
+
+      )
+    div(class="person-list")
+      ul
+        each person in people
+          li= item
