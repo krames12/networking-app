@@ -4,12 +4,18 @@ const port = process.env.PORT || 8080;
 
 const app = express();
 
+// Set's Pug as the template engine
 app.set('view engine', 'pug');
 
+// static files
+app.use(express.static('./public'));
+
+// routes
 app.get('/', (req, res) => {
   res.render('index', { title: 'things and stuff', message: 'ohai there'});
 });
 
-app.listen(port);
+networkingController(app);
 
+app.listen(port);
 console.log('now listening on port', port);
