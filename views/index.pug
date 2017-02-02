@@ -1,9 +1,11 @@
 html
   head
     title= title
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+    script(src='/scripts/scripts.js')
   body
     h1= message
-    form
+    form(id="person-form")
       input(
         id="person-name"
         type="text"
@@ -14,11 +16,8 @@ html
         type="text"
         name="interests"
       )
-      button(
-        type="submit"
-
-      )
+      button(type="submit") Add Person
     div(class="person-list")
       ul
         each person in people
-          li= item
+          li= person

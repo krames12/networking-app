@@ -10,11 +10,6 @@ app.set('view engine', 'pug');
 // static files
 app.use(express.static('./public'));
 
-// routes
-app.get('/', (req, res) => {
-  res.render('index', { title: 'things and stuff', message: 'ohai there'});
-});
-
 networkingController(app);
 
 app.listen(port);
