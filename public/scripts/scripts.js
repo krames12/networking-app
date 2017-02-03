@@ -16,7 +16,6 @@ $(document).ready(() => {
       url: '/people',
       data: person,
       success: function(data) {
-        console.log("data", data);
         location.reload();
       }
     });
@@ -27,9 +26,10 @@ $(document).ready(() => {
 
   $('li').on('click', function() {
     var item = $(this).text().replace(/ /g, "-");
+    console.log(item);
     $.ajax({
       type: 'DELETE',
-      url: '/todo/' + item,
+      url: '/people/' + item,
       success: function(data){
         location.reload();
       }

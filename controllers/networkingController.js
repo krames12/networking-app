@@ -40,7 +40,9 @@ module.exports = function(app) {
   });
 
   app.delete('/people/:item', (req, res) => {
-    Person.find({person: req.params.item.replace(/\-/g, " ")}).remove( (error, data) => {
+    console.log('delete request recieved');
+    console.log(req.params.item);
+    Person.find({name: req.params.item.replace(/\-/g, " ")}).remove((error, data) => {
       if (error) throw error;
       res.json(data);
     });
